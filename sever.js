@@ -32,16 +32,14 @@ app.post("/", (req, res) => {
   `;
 
   let transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
+    host: "smtp.office365.com",
     port: 587,
     secure: false, // upgrade later with STARTTLS
     auth: {
       user: process.env.USER,
       pass: process.env.PASSWORD
     },
-    tls: {
-      rejectUnauthorized: false,
-    },
+
   });
 
   let mailOptions = {
