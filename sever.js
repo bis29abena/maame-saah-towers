@@ -54,9 +54,7 @@ app.post("/", (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      res.render("index", {
-        error: "Couldn't send mail Please try again!",
-      });
+      console.log(error);
     } else {
       console.log("Message sent: %s", info.messageId);
       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
